@@ -9,12 +9,21 @@ const main = () => {
     newItem.textContent = input.value
     document.querySelector('ul').appendChild(newItem)
     input.value = ''
+    let didDblClick = false
     newItem.addEventListener('click', () => {
-      if (newItem.className === 'done') {
-        newItem.className = ''
-      } else {
-        newItem.className = 'done'
-      }
+      setTimeout(() => {
+        if (!didDblClick) {
+          if (newItem.className === 'done') {
+            newItem.className = ''
+          } else {
+            newItem.className = 'done'
+          }
+        }
+      }, 500)
+    })
+    newItem.addEventListener('dblclick', () => {
+      didDblClick = true
+      newItem.remove()
     })
   })
 }
