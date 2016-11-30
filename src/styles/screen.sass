@@ -1,11 +1,10 @@
 @import 'utility'
 
-$base-text-size: 16px
-$base-font-family: sans-serif
+$base-text-size: 22px
+$base-font-family: 'Pompiere', cursive
 $poa-purple: rebeccapurple
 $primary-text-color: #fff
-$primary-font: 'Bungee Shade', sans-serif
-$secondary-font: 'Pompiere', cursive
+$heading-font: 'Bungee Shade', sans-serif
 
 html
   text-size-adjust: 100%
@@ -24,3 +23,50 @@ body
 
 main
   flex: 1
+
+  h1
+    font-family: $heading-font
+
+  ul
+    text-align: center
+    list-style: none
+    padding-left: 0
+
+    li.done
+      text-decoration: line-through
+      opacity: 0.5
+
+  form
+    text-align: center
+
+    input
+      font-family: $base-font-family
+      font-size: 22px
+      text-align: center
+      background-color: hsla(0, 0%, 100%, 0.5)
+      border: none
+      padding: 8px
+
+      &:focus
+        outline: none
+        background-color: hsla(0, 0%, 100%, 0.25)
+        color: $primary-text-color
+
+      &::placeholder
+        color: $poa-purple
+
+footer
+  text-align: center
+
+  img
+    height: 42px
+    animation-name: spin
+    animation-duration: 8s
+    animation-iteration-count: infinite
+    animation-timing-function: linear
+
+@keyframes spin
+  from
+    transform: rotate(0deg)
+  to
+    transform: rotate(360deg)
