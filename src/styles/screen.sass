@@ -2,11 +2,25 @@
 
 $base-text-size: 16px
 $base-font-family: sans-serif
+$poa-purple: rebeccapurple
+$primary-text-color: #fff
+$primary-font: 'Bungee Shade', sans-serif
+$secondary-font: 'Pompiere', cursive
 
 html
   text-size-adjust: 100%
+  height: 100%
 
 body
   @include font-smoothing(on)
+  background-color: $poa-purple
+  color: $primary-text-color
   margin: 0
   font: $base-text-size / 1 $base-font-family
+  display: flex
+  align-items: center
+  flex-direction: column
+  min-height: 100%
+
+main
+  flex: 1
